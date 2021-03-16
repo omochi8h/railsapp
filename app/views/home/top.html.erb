@@ -1,0 +1,52 @@
+<div class="main">
+<div class="container">
+<img class="top-img" src="/home_images/fukupic.jpg">
+
+<div class="top-main">
+
+  <h1>福島大学サークル用ブログサイト</h1>
+  <p>福島大学のサークルの情報がなくて困っている。サークル勧誘がうまくいかない。
+  </br>勧誘活動が存分にできない今、サークル活動に関する悩みはつきないでしょう。
+</br>このサイトがサークル活動の助けになれば幸いです。
+</br></p>
+
+  <div class="top-button">
+    <button type="button" onclick="location.href='/users/index'">サークル一覧</button>
+  </div>
+
+  <ul class="top-list">
+
+    <% if @current_user==nil %>
+      <li><%= link_to("サークルログイン","/login") %></li>
+    <% end %>
+    <li>
+      <%= link_to("お問い合わせ","/contacts/form") %>
+    </li>
+
+  </ul>
+
+</div>
+
+<div class="top-footer">
+  <div class="top-posts">
+  <h1>新規投稿</h1>
+  </div>
+  <% @posts.each do |post| %>
+  <div class="posts-index-item">
+      <div class="post-left">
+        <img src="<%= "/post_images/#{post.image_name}" %>">
+      </div>
+      <div class="post-right">
+        <div class="post-user-name">
+          <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+        </div>
+
+    <%= link_to(post.title,"/posts/#{post.id}")%>
+  </div>
+</div>
+  <% end %>
+
+</div>
+
+</div>
+</div>

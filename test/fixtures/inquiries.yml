@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  circle_name: MyString
+  email: MyString
+  person_name: MyString
+  kind: MyString
+
+two:
+  circle_name: MyString
+  email: MyString
+  person_name: MyString
+  kind: MyString

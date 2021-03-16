@@ -1,0 +1,26 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">
+      <h1>サークルアカウント　ログイン</h1>
+    </div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+        <%= form_tag("/login") do %>
+        <p>サークルID</p>
+        <input name="id" value="<%= @circle_id %>">
+        <p>パスワード</p>
+        <input name="password" type="password" value="<%= @password %>">
+        <input type="submit" value="ログイン">
+        <% end %>
+      </div>
+    </div>
+    <div class="loginfoot">
+      <%= link_to("アカウントをお持ちでないサークルはこちら","/form") %>
+    </div>
+  </div>
+</div>

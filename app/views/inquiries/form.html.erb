@@ -1,0 +1,32 @@
+<div class="main">
+  <div class="container">
+    <h1>アカウントを作成する</h1>
+    <%= form_tag("/inquiries/create") do %>
+      <div class="form">
+      <div class="form-body">
+        <% @inquiry.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+            <!-- <% if message=="Circle name has already been taken " %>
+              <p>すでにアカウントが存在するサークル名です。<p>
+            <% end %> -->
+          </div>
+        <% end %>
+        <p>サークル名（正式名称）</p>
+        <input name="circle_name" value="<%= @inquiry.circle_name %>">
+        <p>サークル形態　以下のうち一つをご記入ください</p>
+        <p>運動系公認サークル/文化系公認サークル/非公認サークル/学生団体</p>
+        <input name="kind" value="<%= @inquiry.kind %>">
+
+        <p>代表者名</p>
+        <input name="person_name" value="<%= @inquiry.person_name %>">
+        <p>代表者メールアドレス</p>
+        <input name="email" value="<%= @inquiry.email %>">
+        <input type="submit" value="送信">
+      </div>
+      </div>
+    <% end %>
+  </div>
+
+  </div>
+</div>

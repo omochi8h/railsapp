@@ -1,0 +1,33 @@
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">
+      <h1>ユーザー情報の編集</h1>
+    </div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+
+        <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
+        <!-- <p>ユーザー名</p>
+        <input name="name" value="<%= @user.name %>"> -->
+        <!-- <%= form_with model: @s do |f| %>
+          <p>どれかひとつ選択してください</p>
+          <%= f.select :kind,[["運動部","運動部"],["文化部","文化部"]], include_blank: "選択してください" %>
+          <%= f.submit "送信" %>
+        <% end %> -->
+        <!-- <p>サークルID</p>
+        <input name="circle_id" value="<%= @user.circle_id %>"> -->
+        <p>サークル画像</p>
+        <input name="image" type="file">
+        <p>サークル紹介</p>
+        <textarea name="user_content"><%= @user.user_content %></textarea>
+        <input type="submit" value="保存">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
