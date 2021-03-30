@@ -1,0 +1,2 @@
+current directory: /home/pc/circle/vendor/bundle/ruby/2.5.0/gems/mimemagic-0.3.7/ext/mimemagic
+/home/pc/.rbenv/versions/2.5.5/bin/ruby -rrubygems /home/pc/circle/vendor/bundle/ruby/2.5.0/gems/rake-13.0.3/exe/rake RUBYARCHDIR=/home/pc/circle/vendor/bundle/ruby/2.5.0/extensions/x86_64-linux/2.5.0-static/mimemagic-0.3.7 RUBYLIBDIR=/home/pc/circle/vendor/bundle/ruby/2.5.0/extensions/x86_64-linux/2.5.0-static/mimemagic-0.3.7

@@ -39,10 +39,10 @@ test:
 production:
   # <<: *default
   # database: db/production.sqlite3
-  # adapter: mysql2
-  adapter: postgresql
-  # encoding: utf8
-  encoding: unicode
+  adapter: mysql2
+  # adapter: postgresql
+  encoding: utf8
+  # encoding: unicode
   # reconnect: false
   # database: circle_production
   pool: 5
