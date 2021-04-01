@@ -8,10 +8,20 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
     <header>
+      <!-- <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> -->
+
       <ul class="header-left">
         <li>
           <%= link_to("TOP","/") %>
@@ -20,8 +30,10 @@
           <%= link_to("サークル一覧","/users/index") %>
         </li>
       </ul>
+      <!-- </div> -->
 
       <div class="header-right">
+        <ul id="navbar" class="navbar-collapse collapse">
         <% if @current_user %>
           <li>
             <%= link_to(@current_user.name,"/users/#{@current_user.id}") %>
@@ -37,7 +49,9 @@
         <li>
           <%= link_to("サークルログイン","/login") %>
         </li>
+
         <% end %>
+        </ul>
 
       </div>
     </header>

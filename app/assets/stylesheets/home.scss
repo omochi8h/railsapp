@@ -153,3 +153,22 @@ header{
   color:white;
   z-index: 2;
 }
+
+@media(max-width: 670px){ //*スマホ対応*//
+.container {
+  width: 100%;
+  // margin: 20px auto;
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+  clear: both;
+  background-color: #f5f8fa; /* white */
+}
+
+}
+
+@media(max-width: 1000px){ //*タブレット対応*//
+
+
+}
