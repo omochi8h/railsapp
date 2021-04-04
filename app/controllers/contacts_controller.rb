@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact=Contact.new(email: params[:email],
-                    content: params[:content])
+                content: params[:content])
     if @contact.save
       # flash[:notice]="投稿しました"
       ContactMailer.send_mail(@contact).deliver

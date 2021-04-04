@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get "contacts/form" => "contacts#form"
   post "contacts/create" => "contacts#create"
-  get "contacts/next" => "contact#next"
+  get "contacts/next" => "contacts#next"
 
   get 'users/index' => "users#index"
   get "users/:id/edit" => "users#edit"

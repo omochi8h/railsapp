@@ -117,6 +117,16 @@ body {
   opacity: 0.5;
 }
 
+.flash{
+  position:absolute;
+  color: white;
+  text-align: center;
+  background-color: orange;
+  height: 100px;
+  width: 200px;
+  margin:100px auto;
+  z-index: 5;
+}
 /* head */
 header{
   position: fixed;
