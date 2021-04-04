@@ -176,6 +176,7 @@ header{
     background-color: #f5f8fa; /* white */
   }
   .form-body textarea {
+    box-sizing:border-box;border:none;
     font-size: 20px;
     padding: 10px;
     min-height: 300px;
