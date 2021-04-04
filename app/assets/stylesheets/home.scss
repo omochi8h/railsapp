@@ -165,17 +165,24 @@ header{
 }
 
 @media(max-width: 670px){ //*スマホ対応*//
-.container {
-  width: 100%;
-  // margin: 20px auto;
-  padding-top: 30px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 30px;
-  clear: both;
-  background-color: #f5f8fa; /* white */
-}
-
+  .container {
+    width: 100%;
+    // margin: 20px auto;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+    clear: both;
+    background-color: #f5f8fa; /* white */
+  }
+  .form-body textarea {
+    font-size: 20px;
+    padding: 10px;
+    min-height: 300px;
+    min-width: 500px;
+    border: 1px solid rgb(216, 218, 223);
+    resize: none;
+  }
 }
 
 @media(max-width: 1000px){ //*タブレット対応*//
