@@ -14,8 +14,8 @@ gem 'will_paginate-bootstrap'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.5'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-gem 'mysql2'
-# gem "pg", group: :production
+gem 'mysql2', group: [:development, :test]
+gem "pg", group: :production
 gem 'mimemagic', '=0.3.7'
 
 # Use Puma as the app server
@@ -72,7 +72,8 @@ group :test do
 end
 
 group :production do
-  # gem 'pg'
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
   gem 'listen', '>= 3.0.5', '< 3.2'
