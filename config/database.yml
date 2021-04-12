@@ -43,9 +43,10 @@ production:
   adapter: postgresql
   encoding: unicode
   database: db/production.postgresql
+  url: <%= ENV['postgres://oqycychiqqklxm:27ba23a2c951987a0f98962b190db3f6d4c3444116bef06266de078bda8d66b6@ec2-54-235-108-217.compute-1.amazonaws.com:5432/d3e087q7bjgutd'] %>
   pool: 5
   username: test_postgre
-  password:  
+  password:
   # encoding: utf8
   # encoding: unicode
   # reconnect: false
