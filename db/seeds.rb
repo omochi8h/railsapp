@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+insert into users (name, circle_id, password, user_content, kind) values ('テニス部', 'tennis', 'tennis', 'こんにちは', 0);
