@@ -1,5 +1,0 @@
-class ChangeDatatypeKindOfUsers < ActiveRecord::Migration[5.2]
-  def change
-    change_column :users, :kind ,:integer
-  end
-end
