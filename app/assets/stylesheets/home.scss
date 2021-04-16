@@ -178,7 +178,7 @@ body {
     clear: both;
     background-color: #f5f8fa; /* white */
   }
-  .form-body textarea {
+  .form-body textarea[type="text"] {
     box-sizing:border-box;
     border:none;
     font-size: 20px;
