@@ -117,49 +117,45 @@ body {
   resize: none;
 }
 
-.form-body textarea::-webkit-input-placeholder {
-  font-size: 24px;
-  opacity: 0.5;
-}
+// .form-body textarea::-webkit-input-placeholder {
+//   font-size: 24px;
+//   opacity: 0.5;
+// }
 
 .flash{
-  // position:absolute;
+  position:absolute;
   color: white;
-  text-align: center;
+  // text-align: center;
   background-color: orange;
-  height: 20px;
+  height: 40px;
   width: 200px;
-  margin:100px 0;
   margin-left: auto;
   margin-right: auto;
   z-index: 5;
+  display: inline-block;
 }
 /* head */
-header{
+.header{
   position: fixed;
   height:64px;
-  /* position:absolute; */
+  // position:absolute;
   z-index: 1;
   width:100%;
   background-color: #356645;
+  color: white;
 }
-.header-left{
-  float: left;
-  padding-right: 20px;
-  line-height: 64px;
 
-}
 .header-right{
   float: right;
   padding-right: 20px;
 }
 .header-left li{
   float:left;
-  padding-right: 20px;
+  padding-left: 20px;
   line-height: 54px;
   font-size:20px;
-  color:#f5f8fa;
-  z-index: 2;
+  // color:#f5f8fa;
+  // z-index: 2;
 }
 
 .header-right li{
@@ -168,7 +164,7 @@ header{
   line-height: 54px;
   font-size:20px;
   color:white;
-  z-index: 2;
+  // z-index: 2;
 }
 
 @media(max-width: 670px){ //*スマホ対応*//
@@ -183,14 +179,16 @@ header{
     background-color: #f5f8fa; /* white */
   }
   .form-body textarea {
-    box-sizing:border-box;border:none;
+    box-sizing:border-box;
+    border:none;
     font-size: 20px;
     padding: 10px;
     min-height: 300px;
     // min-width: 500px;
-    width: 550px;
+    width: 20%;
     border: 1px solid rgb(216, 218, 223);
-    resize: none;
+    // resize: none;
+    color: blue;
   }
 }
 
