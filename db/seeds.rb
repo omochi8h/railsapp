@@ -7,3 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(name:'テニス部',circle_id: 'tennis', password:'tennis', user_content:'こんにちは',kind:0)
+User.create(name:'吹奏楽部',circle_id: 'brassband', password:'brassband', user_content:'こんにちは',kind:1)
+User.create(name:'テニス部',circle_id: 'dance', password:'dance', user_content:'こんにちは',kind:2)
+User.create(name:'テニス部',circle_id: 'volunteer', password:'volunteer', user_content:'こんにちは',kind:3)
