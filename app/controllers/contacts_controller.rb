@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
     if @contact.save
       # flash[:notice]="投稿しました"
       ContactMailer.send_mail(@contact).deliver
-      redirect_to("contacts/next")
+      redirect_to("/contacts/next")
     else
       render("/contacts/form")
     end
