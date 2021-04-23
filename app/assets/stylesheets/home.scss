@@ -115,6 +115,9 @@ body {
   min-width: 700px;
   border: 1px solid rgb(216, 218, 223);
   resize: none;
+  box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+-webkit-box-sizing:border-box; /* Chrome, Safari */
 }
 
 // .textarea-large{
@@ -192,6 +195,9 @@ body {
     min-height: 300px;
     min-width: 400px;
     // min-width: 500px;
+    box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Chrome, Safari */
 
     border: 1px solid rgb(216, 218, 223);
     // resize: none;
