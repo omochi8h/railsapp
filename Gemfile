@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.5'
 
+gem 'carrierwave'
+# gem 'rmagick'
+
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 # gem 'bootstrap-will_paginate'
 # gem 'bootstrap-sass'

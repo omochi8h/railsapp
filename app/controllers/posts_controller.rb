@@ -18,12 +18,14 @@ before_action :ensure_correct_user,{only:[:edit,:update,:destroy]}
     @post=Post.new(content: params[:content],
                     user_id: @current_user.id,
                   title: params[:title])
-    if params[:image]
-      @post.image_name="#{@post.id}.jpg"
-      image=params[:image]
-      File.binwrite("public/post_images/#{@post.image_name}",image.read)
-    end
+
     if @post.save
+      if params[:image]
+        @post.image_name="#{@post.id}.jpg"
+        image=params[:image]
+        File.binwrite("public/post_images/#{@post.image_name}",image.read)
+        @post.save
+      end
       flash[:notice]="投稿しました"
       redirect_to("/users/#{@current_user.id}")
     else
