@@ -19,8 +19,12 @@ before_action :ensure_correct_user, {only:[:edit,:update]}
   end
   def update
     @user=User.find_by(id: params[:id])
-    # @user.name=params[:name]
-    # @user.circle_id=params[:circle_id]
+    # @user = User.update params.require(:user).permit(:user_content)
+    # if image = params[:comment][:image]
+    #   @user.image.attach(image)
+    # end
+    #
+    # redirect_to @user
     @user.user_content=params[:user_content]
     if params[:image]
       @user.image_name="#{@user.id}.jpg"

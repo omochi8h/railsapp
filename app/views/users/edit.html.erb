@@ -12,6 +12,7 @@
         <% end %>
 
         <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
+
         <!-- <p>ユーザー名</p>
         <input name="name" value="<%= @user.name %>"> -->
         <!-- <%= form_with model: @s do |f| %>
@@ -21,12 +22,14 @@
         <% end %> -->
         <!-- <p>サークルID</p>
         <input name="circle_id" value="<%= @user.circle_id %>"> -->
+
         <p>サークル画像</p>
         <input name="image" type="file">
         <p>サークル紹介</p>
         <textarea name="user_content"><%= @user.user_content %></textarea>
         <input type="submit" value="保存">
         <% end %>
+
       </div>
     </div>
   </div>

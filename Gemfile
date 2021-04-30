@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.5'
 
 gem 'carrierwave'
+gem 'mini_magick'
 # gem 'rmagick'
 
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
@@ -77,6 +78,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'fog-aws'
 end
 
   gem 'listen', '>= 3.0.5', '< 3.2'

@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+
+  # has_one_attached :image
+
+  mount_uploader :image_name, ImageUploader
+
   validates :name,{presence: true}
   validates :circle_id,{presence: true, uniqueness: true}
   validates :password, {presence:true}
