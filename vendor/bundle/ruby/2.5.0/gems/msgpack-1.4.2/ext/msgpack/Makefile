@@ -12,12 +12,12 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /home/pc/.rbenv/versions/2.5.5/include/ruby-2.5.0
+topdir = /home/hazuki/.rbenv/versions/2.5.5/include/ruby-2.5.0
 hdrdir = $(topdir)
-arch_hdrdir = /home/pc/.rbenv/versions/2.5.5/include/ruby-2.5.0/x86_64-linux
+arch_hdrdir = /home/hazuki/.rbenv/versions/2.5.5/include/ruby-2.5.0/x86_64-linux
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/home/pc/.rbenv/versions/2.5.5
+prefix = $(DESTDIR)/home/hazuki/.rbenv/versions/2.5.5
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -31,8 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20210305-5426-6cyr72
-sitelibdir = $(DESTDIR)./.gem.20210305-5426-6cyr72
+sitearchdir = $(DESTDIR)./.gem.20210510-41359-k6xit9
+sitelibdir = $(DESTDIR)./.gem.20210510-41359-k6xit9
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -65,9 +65,9 @@ archdir = $(rubyarchdir)
 
 CC = gcc
 CXX = g++
-LIBRUBY = $(LIBRUBY_A)
+LIBRUBY = $(LIBRUBY_SO)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
-LIBRUBYARG_SHARED = -Wl,-rpath,$(libdir) -L$(libdir) 
+LIBRUBYARG_SHARED = -Wl,-rpath,$(libdir) -L$(libdir) -l$(RUBY_SO_NAME)
 LIBRUBYARG_STATIC = -Wl,-rpath,$(libdir) -L$(libdir) -l$(RUBY_SO_NAME)-static
 empty =
 OUTFLAG = -o $(empty)
@@ -81,13 +81,13 @@ optflags = -O3
 debugflags = -ggdb3
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict
 CCDLFLAGS = -fPIC
-CFLAGS   = $(CCDLFLAGS) $(cflags) -I.. -Wall -O3 -g -std=gnu99 -DHASH_ASET_DEDUPE=0  -DSTR_UMINUS_DEDUPE=1  -DSTR_UMINUS_DEDUPE_FROZEN=0  $(ARCH_FLAG)
+CFLAGS   = $(CCDLFLAGS) $(cflags)  -fPIC -I.. -Wall -O3 -g -std=gnu99 -DHASH_ASET_DEDUPE=0  -DSTR_UMINUS_DEDUPE=1  -DSTR_UMINUS_DEDUPE_FROZEN=0  $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
-CPPFLAGS = -DHAVE_RUBY_ST_H -DHAVE_ST_H -DHAVE_RB_STR_REPLACE -DHAVE_RB_INTERN_STR -DHAVE_RB_SYM2STR -DHAVE_RB_STR_INTERN -DHAVE_RB_BLOCK_LAMBDA -DHAVE_RB_HASH_DUP -DHAVE_RB_HASH_CLEAR -I/home/pc/.rbenv/versions/2.5.5/include  $(DEFS) $(cppflags)
+CPPFLAGS = -DHAVE_RUBY_ST_H -DHAVE_ST_H -DHAVE_RB_STR_REPLACE -DHAVE_RB_INTERN_STR -DHAVE_RB_SYM2STR -DHAVE_RB_STR_INTERN -DHAVE_RB_BLOCK_LAMBDA -DHAVE_RB_HASH_DUP -DHAVE_RB_HASH_CLEAR -I/home/hazuki/.rbenv/versions/2.5.5/include  $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
-ldflags  = -L. -L/home/pc/.rbenv/versions/2.5.5/lib  -fstack-protector -rdynamic -Wl,-export-dynamic
-dldflags = -L/home/pc/.rbenv/versions/2.5.5/lib  -Wl,--compress-debug-sections=zlib 
+ldflags  = -L. -L/home/hazuki/.rbenv/versions/2.5.5/lib  -fstack-protector -rdynamic -Wl,-export-dynamic
+dldflags = -L/home/hazuki/.rbenv/versions/2.5.5/lib  -Wl,--compress-debug-sections=zlib 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -shared
@@ -112,7 +112,7 @@ ruby_headers = $(hdrdir)/ruby.h $(hdrdir)/ruby/backward.h $(hdrdir)/ruby/ruby.h 
 RM = rm -f
 RM_RF = $(RUBY) -run -e rm -- -rf
 RMDIRS = rmdir --ignore-fail-on-non-empty -p
-MAKEDIRS = /bin/mkdir -p
+MAKEDIRS = /usr/bin/mkdir -p
 INSTALL = /usr/bin/install -c
 INSTALL_PROG = $(INSTALL) -m 0755
 INSTALL_DATA = $(INSTALL) -m 644
@@ -134,11 +134,11 @@ extout =
 extout_prefix = 
 target_prefix = /msgpack
 LOCAL_LIBS = 
-LIBS =   -lpthread -ldl -lcrypt -lm   -lc
+LIBS = $(LIBRUBYARG_SHARED)  -lpthread -ldl -lcrypt -lm   -lc
 ORIG_SRCS = buffer.c buffer_class.c extension_value_class.c factory_class.c packer.c packer_class.c packer_ext_registry.c rbinit.c rmem.c unpacker.c unpacker_class.c unpacker_ext_registry.c
 SRCS = $(ORIG_SRCS) 
 OBJS = buffer.o buffer_class.o extension_value_class.o factory_class.o packer.o packer_class.o packer_ext_registry.o rbinit.o rmem.o unpacker.o unpacker_class.o unpacker_ext_registry.o
-HDRS = $(srcdir)/buffer.h $(srcdir)/packer.h $(srcdir)/rmem.h $(srcdir)/sysdep_types.h $(srcdir)/factory_class.h $(srcdir)/sysdep.h $(srcdir)/buffer_class.h $(srcdir)/compat.h $(srcdir)/packer_ext_registry.h $(srcdir)/packer_class.h $(srcdir)/sysdep_endian.h $(srcdir)/extension_value_class.h $(srcdir)/unpacker.h $(srcdir)/unpacker_class.h $(srcdir)/unpacker_ext_registry.h
+HDRS = $(srcdir)/unpacker_class.h $(srcdir)/extension_value_class.h $(srcdir)/unpacker_ext_registry.h $(srcdir)/rmem.h $(srcdir)/packer.h $(srcdir)/factory_class.h $(srcdir)/packer_ext_registry.h $(srcdir)/sysdep_types.h $(srcdir)/sysdep.h $(srcdir)/compat.h $(srcdir)/unpacker.h $(srcdir)/packer_class.h $(srcdir)/buffer.h $(srcdir)/sysdep_endian.h $(srcdir)/buffer_class.h
 LOCAL_HDRS = 
 TARGET = msgpack
 TARGET_NAME = msgpack

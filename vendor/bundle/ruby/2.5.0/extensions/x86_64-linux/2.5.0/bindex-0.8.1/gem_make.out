@@ -1,0 +1,15 @@
+current directory: /home/hazuki/circle/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+/home/hazuki/.rbenv/versions/2.5.5/bin/ruby -I /home/hazuki/.rbenv/versions/2.5.5/lib/ruby/site_ruby/2.5.0 -r ./siteconf20210510-41359-1gl2j2i.rb extconf.rb
+creating Makefile
+
+current directory: /home/hazuki/circle/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /home/hazuki/circle/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/hazuki/circle/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20210510-41359-1kzyrf6/skiptrace/internal
